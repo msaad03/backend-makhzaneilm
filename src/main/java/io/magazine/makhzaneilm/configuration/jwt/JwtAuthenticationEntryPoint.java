@@ -1,5 +1,7 @@
 package io.magazine.makhzaneilm.configuration.jwt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,7 @@ import java.io.Serializable;
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 
     private static final long serialVersionUID = -5858869558959243875L;
+    private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationEntryPoint.class);
 
     @Override
     public void commence(
@@ -20,6 +23,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
             HttpServletResponse response,
             AuthenticationException authException
     ) throws IOException {
+        logger.error("Unauthorized error: {}", authException.getMessage());
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
     }
 }
