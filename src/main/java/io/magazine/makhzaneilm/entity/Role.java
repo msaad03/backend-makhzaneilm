@@ -1,14 +1,14 @@
-package io.magazine.makhzaneilm.model;
+package io.magazine.makhzaneilm.entity;
 
-import io.magazine.makhzaneilm.model.enums.ERole;
+import io.magazine.makhzaneilm.constants.enums.ERole;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
@@ -19,8 +19,9 @@ import java.time.LocalDateTime;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)

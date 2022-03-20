@@ -1,15 +1,15 @@
 package io.magazine.makhzaneilm.service;
 
+import io.magazine.makhzaneilm.entity.File;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
-import java.nio.file.Path;
+import java.io.IOException;
 import java.util.stream.Stream;
 
 public interface FileStorageService {
-    public void init();
-    public void save(MultipartFile file);
-    public Resource load(String filename);
-    public void deleteAll();
-    public Stream<Path> loadAll();
+    File store(MultipartFile file) throws IOException;
+
+    File getFile(String id);
+
+    Stream<File> getAllFiles();
 }

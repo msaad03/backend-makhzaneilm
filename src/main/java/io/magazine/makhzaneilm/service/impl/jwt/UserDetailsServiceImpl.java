@@ -1,9 +1,8 @@
 package io.magazine.makhzaneilm.service.impl.jwt;
 
-import io.magazine.makhzaneilm.model.User;
+import io.magazine.makhzaneilm.entity.User;
 import io.magazine.makhzaneilm.repository.UserRepository;
 import io.magazine.makhzaneilm.service.impl.UserDetailsImpl;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

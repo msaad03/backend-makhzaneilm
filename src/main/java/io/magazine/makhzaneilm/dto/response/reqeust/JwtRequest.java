@@ -1,4 +1,4 @@
-package io.magazine.makhzaneilm.dto.reqeust;
+package io.magazine.makhzaneilm.dto.response.reqeust;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
