@@ -54,7 +54,7 @@ public class MagazineServiceImpl implements MagazineService {
 
     //Get All Topics
     @Override
-    public AllTopicsResponse getAllTopics()
+    public AllTopicsResponse getAllTopics() {
         final var magazineInfos= magazineInfoRepository.findAll();
         final var magazineInfoList = magazineInfos.stream().map(magazineInfo -> new MagazineInfoResponse(magazineInfo.getId(), magazineInfo.getColumnName(), magazineInfo.getTopic(), magazineInfo.getAuthor(), magazineInfo.getContent())).collect(Collectors.toList());
         return new AllTopicsResponse(magazineInfoList);
