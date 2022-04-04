@@ -52,6 +52,7 @@ public class MagazineServiceImpl implements MagazineService {
         return new MagazineResponse(magazine.getId(), magazine.getName(), magazineInfoList, magazine.getYear(), magazine.getMonth());
     }
 
+    //Get All Topics
     @Override
     public AllTopicsResponse getAllTopics() {
         final var magazineInfos= magazineInfoRepository.findAll();
