@@ -41,7 +41,6 @@ public class FilesController {
                     dbFile.getType(),
                     dbFile.getData().length);
         }).collect(Collectors.toList());
-
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
 
