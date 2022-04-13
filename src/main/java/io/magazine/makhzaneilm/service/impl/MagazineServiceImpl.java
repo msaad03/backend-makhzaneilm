@@ -46,7 +46,7 @@ public class MagazineServiceImpl implements MagazineService {
 
         LocalDate currentdate = LocalDate.now();
         Month currentMonth = currentdate.getMonth();
-        final var magazineByMonth = magazineRepository.findByMonth(MonthsUrdu.valueOf(String.valueOf(currentMonth)).month)
+        final var magazineByMonth = magazineRepository.findByMonth(MonthsUrdu.valueOf(String.valueOf(currentMonth)).month);
         final var magazine=  Optional.ofNullable(magazineByMonth).get().orElseThrow(() -> new EntityNotFoundException(Error.ENTITY_NOT_FOUND));
         final var magazineInfoList = magazine.getMagazineInfo().stream().map(magazineInfo -> new MagazineInfoResponse(magazineInfo.getId(), magazineInfo.getColumnName(), magazineInfo.getTopic(), magazineInfo.getAuthor(), magazineInfo.getContent())).collect(Collectors.toList());
         return new MagazineResponse(magazine.getId(), magazine.getName(), magazineInfoList, magazine.getYear(), magazine.getMonth());
