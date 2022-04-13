@@ -8,6 +8,7 @@ class MakhzaneilmApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Tests");
 	}
 
 }
