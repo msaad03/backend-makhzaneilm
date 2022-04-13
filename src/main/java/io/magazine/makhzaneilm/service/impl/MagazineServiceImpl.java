@@ -1,6 +1,6 @@
 package io.magazine.makhzaneilm.service.impl;
 
-import io.magazine.makhzaneilm.Exceptions.EntityNotFoundException;
+import io.magazine.makhzaneilm.exceptions.EntityNotFoundException;
 import io.magazine.makhzaneilm.constants.enums.MonthsUrdu;
 import io.magazine.makhzaneilm.dto.response.AllMagazinesResponse;
 import io.magazine.makhzaneilm.dto.response.AllTopicsResponse;

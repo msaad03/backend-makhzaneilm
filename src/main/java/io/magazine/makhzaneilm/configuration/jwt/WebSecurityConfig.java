@@ -63,14 +63,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated();
 
         httpSecurity.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-//        httpSecurity.addFilterBefore(filterChainExceptionHandler, JwtRequestFilter.class);
-//        httpSecurity.addFilterBefore(requestFilter, FilterChainExceptionHandler.class);
-//
-//        if (cspEnabled) {
-//            httpSecurity.headers()
-//                    .addHeaderWriter(
-//                            new StaticHeadersWriter("X-Content-Security-Policy", cspConfiguration));
-//        }
 
         //Spring Security Propagation With @Async
         SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);

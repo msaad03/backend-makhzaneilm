@@ -1,4 +1,4 @@
-package io.magazine.makhzaneilm.Exceptions;
+package io.magazine.makhzaneilm.exceptions;
 
 import io.magazine.makhzaneilm.dto.ErrorDto;
 import io.magazine.makhzaneilm.constants.enums.Error;
@@ -11,10 +11,6 @@ public class MagazineException extends RuntimeException {
         private String clientMessage;
         private Error error;
         private ErrorDto errorDto;
-
-        protected MagazineException() {
-            super();
-        }
 
         public MagazineException(Error error) {
             super(error.getMessage());
@@ -48,14 +44,11 @@ public class MagazineException extends RuntimeException {
             this.clientMessage = message;
         }
 
-        public MagazineException(String message, String code) {
-            super(message);
-            this.code = code;
-            this.message = message;
-            this.clientMessage = message;
-        }
+    public MagazineException() {
 
-        public String getCode() {
+    }
+
+    public String getCode() {
             return code;
         }
 

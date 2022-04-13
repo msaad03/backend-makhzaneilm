@@ -1,4 +1,4 @@
-package io.magazine.makhzaneilm.Exceptions;
+package io.magazine.makhzaneilm.exceptions;
 
 import io.magazine.makhzaneilm.controllers.BaseController;
 import io.magazine.makhzaneilm.dto.RestResponseDto;

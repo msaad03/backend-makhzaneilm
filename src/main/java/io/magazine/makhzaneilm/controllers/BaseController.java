@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 
 public class BaseController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
     /**
      * Creates a ResponseEntity to be sent back to client

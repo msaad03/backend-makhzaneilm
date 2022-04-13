@@ -1,4 +1,4 @@
-package io.magazine.makhzaneilm.Exceptions;
+package io.magazine.makhzaneilm.exceptions;
 
 import io.magazine.makhzaneilm.dto.response.ResponseMessage;
 import org.springframework.http.HttpStatus;

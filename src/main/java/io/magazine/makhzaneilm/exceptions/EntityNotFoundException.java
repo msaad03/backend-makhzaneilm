@@ -1,4 +1,4 @@
-package io.magazine.makhzaneilm.Exceptions;
+package io.magazine.makhzaneilm.exceptions;
 
 import io.magazine.makhzaneilm.dto.ErrorDto;
 import io.magazine.makhzaneilm.constants.enums.Error;
@@ -17,5 +17,5 @@ public class EntityNotFoundException extends MagazineException {
         super(errorDto);
     }
 
-    public EntityNotFoundException(String message, String code) {super(message, code); }
+    public EntityNotFoundException(Error message, Throwable code) {super(message, code); }
 }
