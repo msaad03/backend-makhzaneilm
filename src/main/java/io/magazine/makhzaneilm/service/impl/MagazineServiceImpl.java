@@ -33,7 +33,6 @@ public class MagazineServiceImpl implements MagazineService {
         final var magazineResponses = magazines.stream().map(magazine -> new MagazineResponse(magazine.getId(), magazine.getName(), null, magazine.getYear(), magazine.getMonth())).collect(Collectors.toList());
         return new AllMagazinesResponse(magazineResponses);
     }
-
     @Override
     public MagazineResponse getMagazineById(Long id) {
         final var magazine=  Optional.ofNullable(magazineRepository.findById(id)).get().orElseThrow(() -> new EntityNotFoundException(Error.ENTITY_NOT_FOUND));
