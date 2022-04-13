@@ -35,7 +35,6 @@ public class MagazineServiceImpl implements MagazineService {
     }
     @Override
     public MagazineResponse getMagazineById(Long id) {
-        final var temp = "String";
         final var magazine=  Optional.ofNullable(magazineRepository.findById(id)).get().orElseThrow(() -> new EntityNotFoundException(Error.ENTITY_NOT_FOUND));
         final var magazineInfoList = magazine.getMagazineInfo().stream().map(magazineInfo -> new MagazineInfoResponse(magazineInfo.getId(), magazineInfo.getColumnName(), magazineInfo.getTopic(), magazineInfo.getAuthor(), magazineInfo.getContent())).collect(Collectors.toList());
         return new MagazineResponse(magazine.getId(), magazine.getName(), magazineInfoList, magazine.getYear(), magazine.getMonth());
